@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">POCApp</string>
+
+    <style name="login_button">Login</style>
+</resources>
