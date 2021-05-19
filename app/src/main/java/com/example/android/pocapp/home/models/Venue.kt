@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName
 
 data class Venue (
 
-    @SerializedName("city") var city : String,
-    @SerializedName("state") var state : String
+    @SerializedName("city") var city : String? = "N/A",
+    @SerializedName("state") var state : String? = "N/A"
 
 )

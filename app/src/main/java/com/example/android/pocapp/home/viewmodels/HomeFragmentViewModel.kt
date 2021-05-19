@@ -1,14 +1,11 @@
 package com.example.android.pocapp.home.viewmodels
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.android.pocapp.home.models.Guide
 import com.example.android.pocapp.home.models.Guides
 import com.example.android.pocapp.home.repositories.HomeRepository
-import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
 class HomeFragmentViewModel :ViewModel(){
@@ -22,7 +19,6 @@ class HomeFragmentViewModel :ViewModel(){
         viewModelScope.launch {
             val guideList = homeRepo.getGuides()
             guides.postValue(guideList)
-            Log.e("Yeet", "--> $guideList")
             shouldShowProgressBar.postValue(false)
         }
 
