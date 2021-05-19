@@ -9,8 +9,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.android.pocapp.R
 import com.example.android.pocapp.home.models.Guide
+import com.example.android.pocapp.home.models.Guides
 
-class HomeAdapter(var data: ArrayList<Guide>) : RecyclerView.Adapter<HomeAdapter.HomeViewHolder>(){
+class HomeAdapter(var data: ArrayList<Guide> = ArrayList()) : RecyclerView.Adapter<HomeAdapter.HomeViewHolder>(){
 
     class HomeViewHolder(view: View): RecyclerView.ViewHolder(view){
         var name = view.findViewById<TextView>(R.id.name)
@@ -30,9 +31,9 @@ class HomeAdapter(var data: ArrayList<Guide>) : RecyclerView.Adapter<HomeAdapter
 
     override fun onBindViewHolder(holder: HomeViewHolder, position: Int) {
         val guide = data[position]
-        holder.city.text = "City: ${guide.city}"
+        holder.city.text = "City: ${guide.venue.city}"
         holder.name.text = "Name: ${guide.name}"
-        holder.state.text = "State: ${guide.state}"
+        holder.state.text = "State: ${guide.venue.state}"
         holder.endDate.text = "End Date: ${guide.endDate}"
         Glide.with(holder.icon).load(guide.icon).into(holder.icon)
 
