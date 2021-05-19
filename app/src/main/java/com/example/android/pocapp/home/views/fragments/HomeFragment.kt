@@ -22,11 +22,18 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        initUI(requireView())
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
 
-    fun initUI(view: View) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        initUI(requireView())
+    }
+
+
+    private fun observeGuides() {
+
+    }
+    private fun initUI(view: View) {
         recyclerView = view.findViewById(R.id.home_recyclerview)
         progressBar = view.findViewById(R.id.progressbar_home)
     }
